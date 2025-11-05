@@ -43,43 +43,4 @@ Controllers: 4 controllers responsáveis por gerenciar as requisições e respos
 Repositories: 2 repositórios para a comunicação com o banco de dados.
 Models: 2 classes de modelo que representam as entidades principais.
 🗄 Banco de Dados
-O banco de dados utilizado é o MySQL (MySQL Workbench). Ele possui duas tabelas principais:
-
-Tabela usuario
-sql
-Copiar código
-CREATE TABLE usuario (
-    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
-    sobrenome VARCHAR(50) NOT NULL,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    senha VARCHAR(255) NOT NULL,
-    celular VARCHAR(20) NOT NULL
-);
-Campos armazenados:
-ID único
-Nome e Sobrenome
-Email (único para cada usuário)
-Senha e Celular
-Tabela compra
-sql
-Copiar código
-CREATE TABLE compra (
-    id_compra INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT,
-    email VARCHAR(300),
-    endereco VARCHAR(300),
-    cidade VARCHAR(300),
-    estado VARCHAR(300),
-    data_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    quantidade INT NOT NULL,
-    total DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario)
-);
-Campos armazenados:
-ID da compra
-ID do usuário (referenciado na tabela usuario)
-Dados de entrega (endereço, cidade, estado)
-Quantidade de itens comprados e o valor total.
-
-é isso bjs
+O banco de dados utilizado é o MySQL (MySQL Workbench). 
